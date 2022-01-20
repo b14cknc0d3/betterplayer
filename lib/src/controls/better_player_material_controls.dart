@@ -189,24 +189,19 @@ class _BetterPlayerMaterialControlsState
 
     return Container(
       child: (_controlsConfiguration.enableOverflowMenu)
-          ? AnimatedOpacity(
-              opacity: controlsNotVisible ? 0.0 : 1.0,
-              duration: _controlsConfiguration.controlsHideTime,
-              onEnd: _onPlayerHide,
-              child: Container(
-                height: _controlsConfiguration.controlBarHeight,
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    if (_controlsConfiguration.enablePip)
-                      _buildPipButtonWrapperWidget(
-                          controlsNotVisible, _onPlayerHide)
-                    else
-                      const SizedBox(),
-                    _buildMoreButton(),
-                  ],
-                ),
+          ? Container(
+              height: _controlsConfiguration.controlBarHeight,
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  if (_controlsConfiguration.enablePip)
+                    _buildPipButtonWrapperWidget(
+                        controlsNotVisible, _onPlayerHide)
+                  else
+                    const SizedBox(),
+                  _buildMoreButton(),
+                ],
               ),
             )
           : const SizedBox(),

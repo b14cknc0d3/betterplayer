@@ -308,28 +308,24 @@ class _BetterPlayerCupertinoControlsState
       onTap: () {
         onShowMoreClicked();
       },
-      child: AnimatedOpacity(
-        opacity: controlsNotVisible ? 0.0 : 1.0,
-        duration: _controlsConfiguration.controlsHideTime,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: backgroundColor,
+          ),
           child: Container(
-            decoration: BoxDecoration(
-              color: backgroundColor,
+            height: barHeight,
+            padding: EdgeInsets.symmetric(
+              horizontal: buttonPadding,
             ),
-            child: Container(
-              height: barHeight,
-              padding: EdgeInsets.symmetric(
-                horizontal: buttonPadding,
-              ),
-              child: _controlsConfiguration.menuLogo == null
-                  ? Icon(
-                      _controlsConfiguration.overflowMenuIcon,
-                      color: iconColor,
-                      size: iconSize,
-                    )
-                  : _controlsConfiguration.menuLogo,
-            ),
+            child: _controlsConfiguration.menuLogo == null
+                ? Icon(
+                    _controlsConfiguration.overflowMenuIcon,
+                    color: iconColor,
+                    size: iconSize,
+                  )
+                : _controlsConfiguration.menuLogo,
           ),
         ),
       ),
@@ -355,27 +351,23 @@ class _BetterPlayerCupertinoControlsState
           controller.setVolume(0.0);
         }
       },
-      child: AnimatedOpacity(
-        opacity: controlsNotVisible ? 0.0 : 1.0,
-        duration: _controlsConfiguration.controlsHideTime,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: backgroundColor,
+          ),
           child: Container(
-            decoration: BoxDecoration(
-              color: backgroundColor,
+            height: barHeight,
+            padding: EdgeInsets.symmetric(
+              horizontal: buttonPadding,
             ),
-            child: Container(
-              height: barHeight,
-              padding: EdgeInsets.symmetric(
-                horizontal: buttonPadding,
-              ),
-              child: Icon(
-                (_latestValue != null && _latestValue!.volume > 0)
-                    ? _controlsConfiguration.muteIcon
-                    : _controlsConfiguration.unMuteIcon,
-                color: iconColor,
-                size: iconSize,
-              ),
+            child: Icon(
+              (_latestValue != null && _latestValue!.volume > 0)
+                  ? _controlsConfiguration.muteIcon
+                  : _controlsConfiguration.unMuteIcon,
+              color: iconColor,
+              size: iconSize,
             ),
           ),
         ),
