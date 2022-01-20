@@ -14,9 +14,10 @@ class _ResolutionsPageState extends State<ResolutionsPage> {
   void initState() {
     BetterPlayerConfiguration betterPlayerConfiguration =
         BetterPlayerConfiguration(
-      aspectRatio: 16 / 9,
-      fit: BoxFit.contain,
-    );
+            aspectRatio: 16 / 9,
+            fit: BoxFit.contain,
+            controlsConfiguration: BetterPlayerControlsConfiguration(
+                menuLogo: Icon(Icons.more_vert_outlined)));
     BetterPlayerDataSource dataSource = BetterPlayerDataSource(
       BetterPlayerDataSourceType.network,
       Constants.exampleResolutionsUrls.values.first,

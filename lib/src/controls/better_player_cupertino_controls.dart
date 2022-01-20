@@ -322,11 +322,13 @@ class _BetterPlayerCupertinoControlsState
               padding: EdgeInsets.symmetric(
                 horizontal: buttonPadding,
               ),
-              child: Icon(
-                _controlsConfiguration.overflowMenuIcon,
-                color: iconColor,
-                size: iconSize,
-              ),
+              child: _controlsConfiguration.menuLogo == null
+                  ? Icon(
+                      _controlsConfiguration.overflowMenuIcon,
+                      color: iconColor,
+                      size: iconSize,
+                    )
+                  : _controlsConfiguration.menuLogo,
             ),
           ),
         ),

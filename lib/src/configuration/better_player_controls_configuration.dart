@@ -24,6 +24,8 @@ class BetterPlayerControlsConfiguration {
   ///Icon of mute
   final IconData muteIcon;
 
+  final Widget? menuLogo;
+
   ///Icon of unmute
   final IconData unMuteIcon;
 
@@ -162,6 +164,7 @@ class BetterPlayerControlsConfiguration {
   final Color overflowModalTextColor;
 
   const BetterPlayerControlsConfiguration({
+    this.menuLogo,
     this.controlBarColor = Colors.black87,
     this.textColor = Colors.white,
     this.iconsColor = Colors.white,

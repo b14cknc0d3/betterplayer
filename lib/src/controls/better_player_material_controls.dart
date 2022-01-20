@@ -265,10 +265,12 @@ class _BetterPlayerMaterialControlsState
       },
       child: Padding(
         padding: const EdgeInsets.all(8),
-        child: Icon(
-          _controlsConfiguration.overflowMenuIcon,
-          color: _controlsConfiguration.iconsColor,
-        ),
+        child: _controlsConfiguration.menuLogo == null
+            ? Icon(
+                _controlsConfiguration.overflowMenuIcon,
+                color: _controlsConfiguration.iconsColor,
+              )
+            : _controlsConfiguration.menuLogo,
       ),
     );
   }
